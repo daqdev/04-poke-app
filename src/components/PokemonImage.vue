@@ -3,11 +3,6 @@
         <img v-if="!showPokemon" class="hidden-pokemon"
             :src="imgSrc"
             alt="pokemon">
-
-            <!-- <img class="hidden-pokemon"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-            alt="pokemon"> -->
-        <!-- <img v-if="showPokemon" class="fade-in" -->
         <img v-else class="fade-in"
             :src="imgSrc"
             alt="pokemon">
@@ -38,11 +33,7 @@ computed:{
 </script>
 
 <style scoped>
-/* .hidden-pokemon {
-    filter: brightness(0);
-} */
 
-/* Pokemon Picture */
 .pokemon-container {
     height: 200px;
 }

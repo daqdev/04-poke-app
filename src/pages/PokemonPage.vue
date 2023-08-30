@@ -11,7 +11,6 @@
         <button @click="newGame">Nuevo Juego</button>
     </div>
 
-    <!-- opciones -->
 </template>
 
 <script>
@@ -20,8 +19,6 @@ import PokemonOptions from '@/components/PokemonOptions.vue'
 import { getPokemonOptions } from '@/helpers/getPokemonOptoins'
 
 getPokemonOptions()
-// const [_1, _2, _3, _4] = getPokemonOptions()
-// console.log(getPokemonNames([_1,_2, _3, _4]  ))
 
 export default {
     components: { PokemonImage, PokemonOptions },
@@ -63,5 +60,3 @@ export default {
 </script>
 
 
-
-º

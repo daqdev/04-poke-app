@@ -8,43 +8,27 @@ const getPokemons = () => {
 
 export const getPokemonOptions = async () => {
   const mixedPokemons = getPokemons().sort(() => Math.random() - 0.5);
-  //   console.log(mixedPokemons);
-//   getPokemonNames(mixedPokemons.slice(0, 4));
 
-const pokemons = await getPokemonNames(mixedPokemons.slice(0,4))
-//   console.table( pokemons)
+  const pokemons = await getPokemonNames(mixedPokemons.slice(0, 4));
   return pokemons;
 };
 
-export const getPokemonNames = async ([a,s,d,f] = []) => {
-//   console.log(a, s, d, f);
-
-//   const {data} = await pokeAPI.get(`/1`)
-
-
-//   console.log(data.name)
-const promises = [
+export const getPokemonNames = async ([a, s, d, f] = []) => {
+  const promises = [
     pokeAPI.get(`/${a}`),
     pokeAPI.get(`/${s}`),
     pokeAPI.get(`/${d}`),
-    pokeAPI.get(`/${f}`)
-]
+    pokeAPI.get(`/${f}`),
+  ];
 
+  const [ra, rs, rd, rf] = await Promise.all(promises);
 
-// const resps = await Promise.all(promises)
-// console.log(resps)
-const [ra, rs,rd, rf] = await Promise.all(promises)
+  const res = [
+    { id: ra.data.id, name: ra.data.name },
+    { id: rs.data.id, name: rs.data.name },
+    { id: rd.data.id, name: rd.data.name },
+    { id: rf.data.id, name: rf.data.name },
+  ];
 
-const res = [
-    {id:ra.data.id, name:ra.data.name},
-    {id:rs.data.id, name:rs.data.name},
-    {id:rd.data.id, name:rd.data.name},
-    {id:rf.data.id, name:rf.data.name}
-
-
-]
-
-return res
+  return res;
 };
-
-// export default getPokemonOptions;
