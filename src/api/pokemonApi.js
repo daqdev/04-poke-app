@@ -2,8 +2,9 @@ import axios from "axios";
 
 
 
-const pokeAPI = axios.create({
-    baseURL:'https://pokeapi.co/api/v2/pokemon'
+const pokeAPI = axis.create({
+
+    baseUrl:'https://pokeapi.co/api/v2/pokemon'
 
 
 
