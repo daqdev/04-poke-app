@@ -3,7 +3,7 @@
         <img v-if="!showPokemon" class="hidden-pokemon"
             :src="imgSrc"
             alt="pokemon">
-            
+
             <!-- <img class="hidden-pokemon"
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
             alt="pokemon"> -->
