@@ -16,7 +16,7 @@
 <script>
 import PokemonImage from '@/components/PokemonImage.vue'
 import PokemonOptions from '@/components/PokemonOptions.vue'
-import { getPokemonOptions } from '@/helpers/getPokemonOptoins'
+import { getPokemonOptions } from '@/helpers/getPokemonOptions'
 
 getPokemonOptions()
 
