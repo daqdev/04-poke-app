@@ -6,6 +6,7 @@ describe('pokemonApi', ()=>{
 
         console.log('TEST1');
         // console.log(pokeAPI);
+        expect(pokeAPI.defaults.baseURL).toBe('https://pokeapi.co/api/v2/pokemon')
 
     })
 
