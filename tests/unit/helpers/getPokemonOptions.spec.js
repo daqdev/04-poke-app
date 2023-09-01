@@ -11,17 +11,28 @@ describe('getPokemonOptions',()=>{
         expect(pokemons[649]).toBe(650)
     }),
     test('debe retornar un array de 4 pokemon con sus nombres', async() => { 
-        const [un, dos, tre, cua] = await getPokemonNames([1,2,3,4])
-        console.log(un, dos, tre, cua)
-        expect(un.name).toBe('bulbasaur')
-        expect(dos.name).toBe('ivysaur')
-        expect(tre.name).toBe('venusaur')
-        expect(cua.name).toBe('charmander')
+        
+        const pokemonz = await getPokemonNames([1,2,3,4])
+        expect(pokemonz).toStrictEqual(
+            [
+                {name:'bulbasaur', id:1},
+                {name:'ivysaur', id:2},
+                {name:'venusaur', id:3},
+                {name:'charmander', id:4},
+
+            ]
+        )
+        
+        
+        // const [un, dos, tre, cua] = await getPokemonNames([1,2,3,4])
+        // expect(un.name).toBe('bulbasaur')
+        // expect(dos.name).toBe('ivysaur')
+        // expect(tre.name).toBe('venusaur')
+        // expect(cua.name).toBe('charmander')
      })
     test('getPokemonOptions debe retornar un arreglo mezclado', async () => { 
 
         const pkOptions = await getPokemonOptions()
-        console.log(pkOptions)
         expect(pkOptions.length).toBe(4)
 
         expect(pkOptions).toEqual([
