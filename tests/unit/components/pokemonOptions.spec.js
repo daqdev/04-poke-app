@@ -22,4 +22,21 @@ describe('pokemon-options', ()=>{
         
         expect(wrapper.html()).toMatchSnapshot()
     })
+
+    test('debe mostras las 4 opciones', ()=>{
+
+        const [li1, li2, li3, li4]=wrapper.findAll('li')
+        // console.log(li1.html(), li2.html(), li3.html(), li4.html())
+        expect(li1.html()).toContain('bulbasaur')
+        expect(li2.html()).toContain('ivysaur')
+        expect(li3.html()).toContain('venusaur')
+        expect(li4.html()).toContain('charmander')
+
+    })
+
+    test ('debe emitir "selection" con sus parametros ', ()=>{
+
+
+
+    })
 })
