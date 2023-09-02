@@ -38,7 +38,6 @@ export default {
             const rndInt = Math.floor(Math.random()*4)
 
             this.pokemon=this.pokemonArr[rndInt]
-            console.log( rndInt)
         },
         checkAnswer(pokemonId){
             this.respondio=true
