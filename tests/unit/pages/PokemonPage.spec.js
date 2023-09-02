@@ -1,5 +1,6 @@
-import { shallowMount } from "@vue/test-utils"
+import { mount, shallowMount } from "@vue/test-utils"
 import PokemonPage from '@/pages/PokemonPage'
+import { pokemonzMok } from "../mocks/pokemons.mock"
 
 
 
@@ -20,5 +21,24 @@ beforeEach(()=>{
         const spyPage = jest.spyOn(PokemonPage.methods, 'mixPokemonArray')
         wrapper = shallowMount(PokemonPage)
         expect(spyPage).toHaveBeenCalled()
+    })
+
+    test ('debe hacer match con  el snapshot cuando carga los pokemon', ()=>{
+
+        const wrapper = shallowMount(PokemonPage, {
+        // const wrapper = mount(PokemonPage, {
+            data(){
+                return {
+                    pokemonArr: pokemonzMok,
+                    pokemon : pokemonzMok[0],
+                    showPokemon:false,
+                    respondio:false,
+                    resultado:'Todavia no respondio!'
+                }
+            }
+        })
+        expect(wrapper.html()).toMatchSnapshot()
+
+
     })
  })
