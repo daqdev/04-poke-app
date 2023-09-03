@@ -43,6 +43,8 @@ export default {
             this.respondio=true
             this.resultado=pokemonId===this.pokemon.id?'CORRECTO! ':'NOOOO! era '
             this.showPokemon=true
+
+        console.log('Prueba', this.pokemon)
         },
         newGame(){
             this.pokemon=null

@@ -57,7 +57,32 @@ describe("PokemonPage Component", () => {
     expect(pokemonOptions).toBeTruthy();
     expect(pokemonImage.attributes("pokemonid")).toBe("1");
     expect(pokemonOptions.attributes("pokemons")).toBeTruthy();
-  });
+  })
+
+  test('pruebas con check answer', async ()=>{
+
+    const wrapper = shallowMount(PokemonPage, {
+      // const wrapper = mount(PokemonPage, {
+      data() {
+        return {
+          pokemonArr: pokemonzMok,
+          pokemon: pokemonzMok[0],
+          showPokemon: false,
+          respondio: false,
+          resultado: "Todavia no respondio!",
+        };
+      },
+    });
+
+    await wrapper.vm.checkAnswer(1)
+    
+    expect(wrapper.find('h1').text()).not.toContain('Quien es este')
+    expect(wrapper.vm.showPokemon).toBeTruthy()
+    
+    await wrapper.vm.checkAnswer(2)
+    expect(wrapper.vm.resultado).toBe('NOOOO! era ')
+
+  })
 });
 
 
